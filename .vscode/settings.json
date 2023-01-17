@@ -1,0 +1,12 @@
+{
+  "javascript.validate.enable": false,
+  "flow.pathToFlow": "${workspaceFolder}/../../../../../../.yarn/sdks/flow-bin/cli.js",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.nodePath": "../../../../../../.yarn/sdks",
+  "prettier.configPath": "../../../../../../prettier.config.js",
+  "prettier.ignorePath": "../../../../../../.prettierignore",
+  "prettier.prettierPath": "../../../../../../.yarn/sdks/prettier/index.js"
+}

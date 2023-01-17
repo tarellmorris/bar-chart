@@ -1,0 +1,104 @@
+{
+  "name": "@uber/wcb3-bar-chart",
+  "description": "A bar chart block using nivo/papaparse for convenient authoring",
+  "version": "0.0.0-monorepo",
+  "author": "Tarell Morris <tarell.morris@uber.com>",
+  "dependencies": {
+    "@uber/component-common": "workspace:*",
+    "@uber/dotcom-styles": "workspace:*",
+    "@uber/dotcom-ui": "workspace:*",
+    "@uber/dotcom-utils": "workspace:*",
+    "papaparse": "^5.3.1"
+  },
+  "devDependencies": {
+    "@nivo/bar": "^0.71.0",
+    "@nivo/core": "^0.71.0",
+    "@nivo/legends": "^0.79.1",
+    "@nivo/tooltip": "^0.71.0",
+    "@types/papaparse": "^5.3.5",
+    "@uber/babel-config": "workspace:*",
+    "@uber/eslint-config": "workspace:*",
+    "@uber/eslint-plugin": "workspace:*",
+    "@uber/jest-config": "workspace:*",
+    "@uber/type-check": "workspace:*",
+    "@uber/ubook": "workspace:*",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "28.1.3",
+    "baseui": "workspace:*",
+    "create-universal-package": "^4.3.0",
+    "enzyme": "3.11.0",
+    "eslint": "7.32.0",
+    "eslint-config-fusion": "^6.3.0",
+    "eslint-config-prettier": "2.10.0",
+    "eslint-plugin-baseui": "10.12.1",
+    "eslint-plugin-cup": "2.0.3",
+    "eslint-plugin-flowtype": "4.7.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "23.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "flow-bin": "0.131.0",
+    "jest": "28.1.3",
+    "jest-environment-jsdom": "28.1.3",
+    "jest-environment-jsdom-global": "3.1.2",
+    "prettier": "^2.8.0",
+    "react": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
+    "styletron-engine-snapshot": "1.0.0-beta.2",
+    "styletron-react": "^6.1.0-beta.2"
+  },
+  "engines": {
+    "node": ">=8.9.4",
+    "npm": ">=5.0.0",
+    "yarn": ">=1.0.0"
+  },
+  "files": [
+    "!test",
+    "dist-browser-cjs",
+    "dist-browser-esm",
+    "dist-node-cjs",
+    "dist-node-esm",
+    "src/"
+  ],
+  "keywords": [
+    "babel",
+    "uber-component",
+    "yarn"
+  ],
+  "license": "UNLICENSED",
+  "main": "./src/index.js",
+  "peerDependencies": {
+    "baseui": "*",
+    "react": "*",
+    "react-dom": "*",
+    "styletron-react": "*"
+  },
+  "publishedBrowser": {
+    "./dist-node-cjs/index.js": "./dist-browser-cjs/index.js",
+    "./dist-node-esm/index.js": "./dist-browser-esm/index.js"
+  },
+  "publishedMain": "./dist-node-cjs/index.js",
+  "publishedModule": "./dist-node-esm/index.js",
+  "scripts": {
+    "cover": "jest --coverage",
+    "dev": ".bin/npm-watch | grep --invert-match nodemon",
+    "flow": "flow --color=always --show-all-branches",
+    "lint": "eslint src --cache --color",
+    "prepublish": "cup-clean && cup-build --force-flow",
+    "publish": "npm publish 2>&1 || echo 'could not publish, skipping'",
+    "test": "jest --colors",
+    "ubook": "ubook"
+  },
+  "shouldPublishToUnpm": false,
+  "sideEffects": false,
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "quiet": true
+    }
+  }
+}
